@@ -1,0 +1,18 @@
+package com.example.gladiator.Models.DTOs;
+
+import com.example.gladiator.Models.Gladiator;
+import lombok.Data;
+
+@Data
+public class GladiatorResponseDTO {
+
+    private String gladiatorName;
+    private int actualHP;
+    private int actualLevel;
+
+    public GladiatorResponseDTO(Gladiator gladiator){
+        gladiatorName = gladiator.getName();
+        actualHP = gladiator.getHP();
+        actualLevel = gladiator.getLevel();
+    }
+}
