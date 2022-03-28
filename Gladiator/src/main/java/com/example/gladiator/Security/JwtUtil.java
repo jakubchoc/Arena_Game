@@ -1,15 +1,16 @@
 package com.example.gladiator.Security;
 
-
 import com.example.gladiator.Models.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class JwtUtil extends WebSecurityConfigurerAdapter {
 private String SECRET_KEY = "secret";
 

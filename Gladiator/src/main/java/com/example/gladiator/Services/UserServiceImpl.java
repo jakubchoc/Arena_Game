@@ -3,9 +3,10 @@ package com.example.gladiator.Services;
 import com.example.gladiator.Models.DTOs.SignUpRequestDTO;
 import com.example.gladiator.Models.User;
 import com.example.gladiator.Repositories.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
-
+@Service
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;

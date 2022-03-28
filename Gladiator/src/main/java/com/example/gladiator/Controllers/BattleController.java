@@ -4,7 +4,6 @@ import com.example.gladiator.Models.DTOs.BattleRequestDTO;
 import com.example.gladiator.Models.DTOs.BattleResponseDTO;
 import com.example.gladiator.Models.ErrorMessage;
 import com.example.gladiator.Services.BattleService;
-import com.example.gladiator.Services.BattleServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

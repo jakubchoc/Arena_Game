@@ -30,7 +30,4 @@ public class User {
     @NotNull
     @Column(nullable = false)
     public String password;
-
-    @Column(unique = true, nullable = false)
-    public String registrationToken;
 }

@@ -12,15 +12,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @AllArgsConstructor
+@RestController
 public class LoginController {
 
-    private JwtUtil jwtUtil;
-    private UserService userService;
-    private UserRepository userRepository;
+    private final JwtUtil jwtUtil;
+    private final UserService userService;
+    private final UserRepository userRepository;
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody(required = false) AuthenticationRequestDTO authenticationRequestDTO){
@@ -31,7 +32,7 @@ public class LoginController {
         if(!userService.userExist(authenticationRequestDTO.loginUsername)){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMessage("Invalid username or password"));
         }
-        User loginUser = userRepository.findUserBy(authenticationRequestDTO.loginUsername);
+        User loginUser = userRepository.findUserByUsername(authenticationRequestDTO.loginUsername);
         if(loginUser.getPassword() != authenticationRequestDTO.loginPassword){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMessage("Invalid username or password"));
         }
