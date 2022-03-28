@@ -5,9 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BattleRepository extends JpaRepository<Gladiator, Integer> {
+public interface GladiatorRepository extends JpaRepository<Gladiator, Long> {
 
-    Gladiator findByLevel(int level);
-
-    Gladiator findById(int id);
 }

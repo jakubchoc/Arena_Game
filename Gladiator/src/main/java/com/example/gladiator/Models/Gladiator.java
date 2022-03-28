@@ -4,19 +4,18 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 @Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Gladiator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    public Long id;
+
     @NotNull
     @Column(nullable = false)
     public String name;

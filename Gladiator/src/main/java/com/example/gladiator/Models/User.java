@@ -1,18 +1,36 @@
 package com.example.gladiator.Models;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
 
     @NotNull
-    private String username;
+    @Column(nullable = false)
+    public String username;
 
     @NotNull
-    private String email;
+    @Column(nullable = false)
+    public String email;
 
+    @NotNull
+    @Column(nullable = false)
+    public String password;
+
+    @Column(unique = true, nullable = false)
+    public String registrationToken;
 }
