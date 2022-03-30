@@ -1,12 +1,13 @@
 package com.example.gladiator.Models.DTOs;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AuthenticationResponseDTO {
-    public String token;
+    private String jwt;
 
-    public AuthenticationResponseDTO(String token) {
-        this.token = token;
-    }
 }

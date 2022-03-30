@@ -1,13 +1,24 @@
 package com.example.gladiator.Services;
 
-import com.example.gladiator.Models.User;
+import com.example.gladiator.Repositories.UserRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
-public interface UserService {
+import java.util.ArrayList;
 
-    Boolean userExist(String username);
+@Service
+@AllArgsConstructor
+public class UserService implements UserDetailsService {
 
-    //String signUp(User user);
+    private UserRepository userRepository;
 
-    String getToken();
-
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        var user = userRepository.findUserByUsername(username);
+        return new User(user.getUsername(), user.getPassword(), new ArrayList<>());
+    }
 }

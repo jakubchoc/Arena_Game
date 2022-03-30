@@ -23,4 +23,5 @@ public class GladiatorController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(repsonse);
     }
+
 }
