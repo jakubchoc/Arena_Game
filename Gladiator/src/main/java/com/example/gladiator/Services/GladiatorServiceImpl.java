@@ -1,7 +1,7 @@
 package com.example.gladiator.Services;
 
 import com.example.gladiator.Models.DTOs.GladiatorResponseDTO;
-import com.example.gladiator.Models.Gladiator;
+import com.example.gladiator.Models.Entity.Character;
 import com.example.gladiator.Repositories.GladiatorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,10 +17,10 @@ public class GladiatorServiceImpl implements GladiatorService{
 
     @Override
     public List<GladiatorResponseDTO> getAllGladiators(){
-        List<Gladiator> allGladiators = gladiatorRepository.findAll();
+        List<Character> allCharacters = gladiatorRepository.findAll();
         List<GladiatorResponseDTO> result = new ArrayList<>();
-        for(Gladiator gladiator : allGladiators){
-            GladiatorResponseDTO gladiatorResponseDTO = new GladiatorResponseDTO(gladiator);
+        for(Character character : allCharacters){
+            GladiatorResponseDTO gladiatorResponseDTO = new GladiatorResponseDTO(character);
             result.add(gladiatorResponseDTO);
         }
         return result;

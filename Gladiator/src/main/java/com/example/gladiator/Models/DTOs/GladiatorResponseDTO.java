@@ -1,6 +1,6 @@
 package com.example.gladiator.Models.DTOs;
 
-import com.example.gladiator.Models.Gladiator;
+import com.example.gladiator.Models.Entity.Character;
 import lombok.Data;
 
 @Data
@@ -10,9 +10,9 @@ public class GladiatorResponseDTO {
     private int actualHP;
     private int actualLevel;
 
-    public GladiatorResponseDTO(Gladiator gladiator){
-        gladiatorName = gladiator.getName();
-        actualHP = gladiator.getHP();
-        actualLevel = gladiator.getLevel();
+    public GladiatorResponseDTO(Character character){
+        gladiatorName = character.getName();
+        actualHP = character.getHP();
+        actualLevel = character.getLevel();
     }
 }

@@ -3,7 +3,7 @@ package com.example.gladiator.Services;
 import com.example.gladiator.Models.DTOs.BattleRequestDTO;
 import com.example.gladiator.Models.DTOs.BattleResponseDTO;
 import com.example.gladiator.Models.DTOs.GladiatorResponseDTO;
-import com.example.gladiator.Models.Gladiator;
+import com.example.gladiator.Models.Entity.Character;
 import com.example.gladiator.Repositories.GladiatorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,8 +20,8 @@ public class BattleServiceImpl implements BattleService{
     @Override
     public BattleResponseDTO fight(BattleRequestDTO battleRequestDTO){
 
-        Gladiator playerOne = gladiatorRepository.findById(battleRequestDTO.ownGladiator).get();
-        Gladiator playerTwo = gladiatorRepository.findById(battleRequestDTO.oponentGladiator).get();
+        Character playerOne = gladiatorRepository.findById(battleRequestDTO.ownGladiator).get();
+        Character playerTwo = gladiatorRepository.findById(battleRequestDTO.oponentGladiator).get();
         // osetrit vstup
         List<GladiatorResponseDTO> resultList = new ArrayList<>();
         boolean i = true;

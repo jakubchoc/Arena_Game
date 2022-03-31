@@ -1,6 +1,5 @@
 package com.example.gladiator.Models.DTOs;
 
-import com.example.gladiator.Models.Gladiator;
 import lombok.Data;
 
 import java.util.List;

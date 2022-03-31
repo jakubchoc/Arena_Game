@@ -1,5 +1,6 @@
-package com.example.gladiator.Models;
+package com.example.gladiator.Models.Entity;
 
+import com.example.gladiator.Models.Entity.Character;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,13 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Gladiator {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,18 +23,16 @@ public class Gladiator {
 
     @NotNull
     @Column(nullable = false)
-    public String name;
+    public String username;
 
     @NotNull
     @Column(nullable = false)
-    public int HP;
+    public String email;
 
     @NotNull
     @Column(nullable = false)
-    public int demage;
+    public String password;
 
-    @NotNull
-    @Column(nullable = false)
-    public int level;
-
+    @OneToMany
+    public List<Character> characterList;
 }

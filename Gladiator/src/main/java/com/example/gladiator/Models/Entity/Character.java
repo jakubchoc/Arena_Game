@@ -1,4 +1,4 @@
-package com.example.gladiator.Models;
+package com.example.gladiator.Models.Entity;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Character {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,13 +21,34 @@ public class User {
 
     @NotNull
     @Column(nullable = false)
-    public String username;
+    public String name;
 
     @NotNull
     @Column(nullable = false)
-    public String email;
+    public int level;
 
     @NotNull
     @Column(nullable = false)
-    public String password;
+    public int HP;
+
+    @NotNull
+    @Column(nullable = false)
+    public int demage;
+
+    @Column
+    public int gold;
+
+    @NotNull
+    @Column
+    public int intelligence;
+
+    @NotNull
+    @Column
+    public int lucky;
+
+    @Column
+    public int armor;
+
+    public String typeOfCharacter;
+
 }
